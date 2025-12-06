@@ -1,7 +1,6 @@
 local Canvas = {}
 Canvas.scene = "main"
 
-Canvas.start_button = love.graphics.newImage("assets/images/start_button.png")
 Canvas.game_font = love.graphics.newFont("assets/fonts/emulogic.ttf", 32)
 Canvas.debug_font = love.graphics.newFont(20)
 

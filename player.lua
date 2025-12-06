@@ -10,7 +10,7 @@ function Player.load()
     Player.speed = 20
     Player.jump = 4 * 100
     Player.vy = 0
-    Player.is_alive = true
+    Player.is_alive = false
 
     Player.img = love.graphics.newImage("assets/images/dino.png")
     Player.width = Player.img:getWidth() - 25

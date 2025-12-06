@@ -7,10 +7,9 @@ print("Visit my github: https://github.com/isa0-gh/lua-dino-game\nGood games!")
 function love.load()
 	Player.load()
 	Enemy.load()
-	Button.load()
 
 	love.graphics.setFont(Canvas.game_font)
-	background = love.graphics.newImage("assets/images/background.png")
+	-- background = love.graphics.newImage("assets/images/background.png")
 	love.graphics.setBackgroundColor(0.0039, 0.0353, 0.1608)
 end
 
@@ -51,13 +50,18 @@ function love.update(dt)
 end
 
 function love.draw()
-	love.graphics.draw(background, 0, 150)
 	if Canvas.scene == "main" then
 		love.graphics.setFont(Canvas.game_font)
 		love.graphics.print("Dino Game v1.0.0\nCreated By Isa")
 		Button.draw()
 		return
 	end
+
+	love.graphics.setColor(0, 1, 0)
+	love.graphics.setLineWidth(10)
+	love.graphics.line(0, Canvas.height -1, Canvas.width, Canvas.height - 1)
+	love.graphics.setColor(1, 1, 1)
+
 	if Canvas.debug then
 		love.graphics.setFont(Canvas.debug_font)
 		local text = string.format("Current Player Y Veloicty : %d\nCurrent Player Y: %d\nCurrent Ground Y:%d\nAlive:%s",
