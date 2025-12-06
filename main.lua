@@ -58,7 +58,7 @@ function love.draw()
 	end
 
 	love.graphics.setColor(0, 1, 0)
-	love.graphics.setLineWidth(10)
+	love.graphics.setLineWidth(15)
 	love.graphics.line(0, Canvas.height -1, Canvas.width, Canvas.height - 1)
 	love.graphics.setColor(1, 1, 1)
 
