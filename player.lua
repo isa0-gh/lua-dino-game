@@ -21,6 +21,7 @@ function Player.update(dt)
 
     if (love.keyboard.isDown("space") or Canvas.tapped) and Player.y >= Canvas.groundY  then
 		Canvas.tapped = false
+        love.audio.play(Canvas.jump_sound)
         Player.vy = -Player.jump
     end
 

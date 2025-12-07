@@ -27,7 +27,6 @@ love .
 ## Future Enhancements
 - Better menus
 - Storing high score
-- Sound effects and background music
 
 ## License
 This project is open-source and free to use. Feel free to modify and distribute.
