@@ -2,6 +2,7 @@ local Player = require("player")
 local Enemy = require("enemy")
 local Canvas = require("canvas")
 local Button = require("button")
+local Cheat = require("cheat")
 
 print("Visit my github: https://github.com/isa0-gh/lua-dino-game\nGood games!")
 function love.load()
@@ -20,6 +21,7 @@ function love.mousepressed(x, y, button, istouch)
 end
 
 function love.keypressed(key)
+	Cheat.keypressed(key)
 	if key == "f3" then
         Canvas.debug = not Canvas.debug
     end
@@ -51,7 +53,6 @@ end
 
 function love.draw()
 	if Canvas.scene == "main" then
-		love.graphics.setFont(Canvas.game_font)
 		love.graphics.print("Dino Game v1.0.0\nCreated By Isa")
 		Button.draw()
 		return
@@ -67,22 +68,21 @@ function love.draw()
 		local text = string.format("Current Player Y Veloicty : %d\nCurrent Player Y: %d\nCurrent Ground Y:%d\nAlive:%s",
                                     Player.vy,Player.y,Canvas.groundY,Player.is_alive)
 		love.graphics.print(text)
+		love.graphics.setFont(Canvas.game_font)
     end
 
 	if Canvas.is_stop and Player.is_alive then
-		love.graphics.setFont(Canvas.game_font)
 		love.graphics.print("Game Stopped!",Canvas.width / 4,Canvas.height / 2)
 	end
 
 	if not Player.is_alive then
 		Canvas.is_stop = true
-		love.graphics.setFont(Canvas.game_font)
 		love.graphics.print("Game Over!\n[Tap To Restart]",Canvas.width / 4,Canvas.height / 2)
 	end
 
-	love.graphics.setFont(Canvas.game_font)
-	love.graphics.print(Player.score,Canvas.width / 2.5,Canvas.height / 3)
+	love.graphics.print(Player.score,Canvas.width / 2,Canvas.height / 3)
 	Player.draw()
 	Enemy.draw()
+	Cheat.draw()
 end
 

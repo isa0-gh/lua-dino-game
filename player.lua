@@ -11,6 +11,7 @@ function Player.load()
     Player.jump = 4 * 100
     Player.vy = 0
     Player.is_alive = false
+    Player.can_die = true
 
     Player.img = love.graphics.newImage("assets/images/dino.png")
     Player.width = Player.img:getWidth() - 25

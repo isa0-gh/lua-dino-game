@@ -2,6 +2,7 @@ local Canvas = {}
 Canvas.scene = "main"
 Canvas.jump_sound = love.audio.newSource("assets/sounds/jump.wav", "static")
 Canvas.game_over_sound = love.audio.newSource("assets/sounds/game_over.wav", "static")
+Canvas.cheat_activated_sound = love.audio.newSource("assets/sounds/cheat.wav", "static")
 
 Canvas.game_font = love.graphics.newFont("assets/fonts/emulogic.ttf", 32)
 Canvas.debug_font = love.graphics.newFont(20)
