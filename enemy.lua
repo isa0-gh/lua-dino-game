@@ -30,7 +30,9 @@ function Enemy.update(dt)
         enemy.x = enemy.x - enemy.speed * dt -- move left
         if Utils.checkCollision(Player,enemy) then
             Player.is_alive = false
-            love.audio.play(Canvas.game_over_sound)
+            if Canvas.scene ~= "main" then
+                love.audio.play(Canvas.game_over_sound)
+            end
         end
         if enemy.x < 0 then
             Player.score = Player.score + 10
